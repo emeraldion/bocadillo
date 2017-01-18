@@ -20,3 +20,76 @@ A_B:
       l: b
       c:
         -
+ARIA_ANNA:
+  array:
+    - aria
+    - ariaanna
+  tree:
+    -
+      l: a
+      c:
+        -
+          l: r
+          c:
+            -
+              l: i
+              c:
+                -
+                  l: a
+                  c:
+                    -
+                      l: n
+                      c:
+                        -
+                          l: n
+                          c:
+                            -
+                              l: a
+                              c:
+                                -
+                    -
+
+ALB_A_ER_GO_O_TO:
+  array:
+    - alba
+    - albergo
+    - albero
+    - alberto
+  tree:
+    -
+      l: a
+      c:
+        -
+          l: l
+          c:
+            -
+              l: b
+              c:
+                -
+                  l: a
+                  c:
+                    -
+                -
+                  l: e
+                  c:
+                    -
+                      l: r
+                      c:
+                        -
+                          l: g
+                          c:
+                            -
+                              l: o
+                              c:
+                                -
+                        -
+                          l: o
+                          c:
+                            -
+                        -
+                          l: t
+                          c:
+                            -
+                              l: o
+                              c:
+                                -

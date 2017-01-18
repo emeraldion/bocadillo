@@ -31,15 +31,17 @@ class Bocadillo::Cover
     x = x0
     m = false
     loop do
-      m = true if x < l and arr[x0][y] === arr[x][y]
-      x += 1
+      if x < l and arr[x0][y] === arr[x][y]
+        m = true 
+        x += 1
+      end
       break if m
     end
 
     # If we haven't covered the full length of the assigned slice, launch
     # on the pair (x + 1, y0) with the original length l.
     if x < l
-      r = r.concat(self.cover(arr, x, y, l))
+      r.concat(self.cover(arr, x, y, l))
     end
 
     # Launch on the tail of the string at s[x0] from the position y
