@@ -1,5 +1,5 @@
 class Bocadillo::Usage
-  def self.usage
+  def self.print
   	puts <<END
 Usage:
 	bocadillo <string> [<separator> [<child preamble> [<child separator> [<child terminator>]]]]

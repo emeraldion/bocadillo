@@ -1,7 +1,15 @@
 #!/usr/bin/env ruby
 
 require 'bocadillo'
+require 'bocadillo/args'
 
-arr = ARGV[0].split(ARGV[1])
-puts arr.to_s
-puts Bocadillo.encode(arr, ARGV[2], ARGV[3], ARGV[4])
+if (ARGV.length < 1)
+  Usage.print
+  exit 1
+end
+
+args = Args.get
+#puts args.to_s
+arr = args[:string].split(args[:separator])
+#puts arr.to_s
+puts Bocadillo.encode(arr, args[:preamble], args[:delimiter], args[:terminator])

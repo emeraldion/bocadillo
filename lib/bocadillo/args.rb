@@ -1,5 +1,5 @@
 class Bocadillo::Args
-  def self.parse
+  def self.get
     i = 1
     str = ARGV[i++]
     s = ARGV[i++] || ','
