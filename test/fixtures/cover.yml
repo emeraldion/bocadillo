@@ -1,0 +1,22 @@
+A:
+  array:
+    - a
+  tree:
+    - 
+      l: a
+      c:
+        -
+
+A_B:
+  array:
+    - a
+    - b
+  tree:
+    -
+      l: a
+      c:
+        -
+    -
+      l: b
+      c:
+        -
