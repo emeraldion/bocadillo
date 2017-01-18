@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'bocadillo'
+
+arr = ARGV[0].split(ARGV[1])
+puts arr.to_s
+puts Bocadillo.encode(arr, ARGV[2], ARGV[3], ARGV[4])
