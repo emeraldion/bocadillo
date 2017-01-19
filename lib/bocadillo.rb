@@ -1,6 +1,6 @@
 class Bocadillo
   def self.encode(arr, preamble = '(', divider = '|', terminator = ')')
-    arr.sort
+    arr.sort!
     Serializer.serialize({
       'l' => '',
       'c' => Cover.cover(arr)

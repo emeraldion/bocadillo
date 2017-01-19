@@ -32,7 +32,7 @@ class ParserTest < Test::Unit::TestCase
   end
 
   def test_isin
-    assert_equal  @fixtures['ISIN']['array'],
+    assert_equal @fixtures['ISIN']['array'],
       Parser.parse(@fixtures['ISIN']['string'], '(', '|', ')')
   end
 end
