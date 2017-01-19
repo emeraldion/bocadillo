@@ -33,7 +33,7 @@ Then have it your way:
 ```ruby
 require 'bocadillo'
 
-encoded = Bocadillo::encode(['alba', 'albero', 'albergo', 'alberto'])
+encoded = Bocadillo.encode(['alba', 'albero', 'albergo', 'alberto'])
 # => encoded == 'alb(a|er(go|o|to))'
 ```
 
