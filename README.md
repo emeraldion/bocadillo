@@ -31,7 +31,17 @@ gem install bocadillo
 Then have it your way:
 
 ```ruby
+require 'bocadillo'
 
+encoded = Bocadillo::encode(['alba', 'albero', 'albergo', 'alberto'])
+# => encoded == 'alb(a|er(go|o|to))'
+```
+
+The `bocadillo` gem also installs a `bocadillo` command:
+
+```sh
+$ bocadillo 'alba,albero,albino'
+alb(a|ero|ino)
 ```
 
 ## License
