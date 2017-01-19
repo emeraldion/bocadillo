@@ -39,7 +39,6 @@ class CoverTest < Test::Unit::TestCase
   end
 
   def test_cover_stemmed
-    puts @fixtures['ALB_A_ER_GO_O_TO']['array'].to_s
     assert_equal @fixtures['ALB_A_ER_GO_O_TO']['tree'],
       Cover.cover(@fixtures['ALB_A_ER_GO_O_TO']['array'])
   end

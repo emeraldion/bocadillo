@@ -108,3 +108,35 @@ ALB_A_ER_GO_O_TO:
                               l: o
                               c:
                                 -
+
+VIALE_ETTO:
+  array:
+    - viale
+    - vialetto
+  tree:
+    -
+      l: v
+      c:
+        -
+          l: i
+          c:
+            -
+              l: a
+              c:
+                -
+                  l: l
+                  c:
+                    -
+                      l: e
+                      c:
+                        -
+                        -
+                          l: t
+                          c:
+                            -
+                              l: t
+                              c:
+                                -
+                                  l: o
+                                  c:
+                                    -
