@@ -12,6 +12,8 @@ class Bocadillo
   end
 end
 
+require 'bocadillo/args'
 require 'bocadillo/cover'
 require 'bocadillo/parser'
 require 'bocadillo/serializer'
+require 'bocadillo/usage'

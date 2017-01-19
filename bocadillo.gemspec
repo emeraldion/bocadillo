@@ -11,11 +11,11 @@ Gem::Specification.new do |s|
   s.homepage                  = %q{http://rubygems.org/gems/bocadillo}
 
   s.files                     = ["Rakefile", "lib/bocadillo.rb", "lib/bocadillo/args.rb", "lib/bocadillo/cover.rb",
-                                   "lib/bocadillo/parser.rb", "lib/bocadillo/serializer.rb", "lib/bocadillo/usage.rb",
-                                   "bin/bocadillo"]
+                                  "lib/bocadillo/parser.rb", "lib/bocadillo/serializer.rb", "lib/bocadillo/usage.rb",
+                                  "bin/bocadillo", "README.md", "LICENSE.md"]
   s.require_paths             = ["lib"]
   s.test_files                = ["test/test_bocadillo.rb"]
-  s.default_executable        = "bocadillo"
+  s.executables               << "bocadillo"
 
   s.rubygems_version          = %q{2.6.8}
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
