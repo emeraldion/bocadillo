@@ -40,7 +40,6 @@ class IdempotenceTest < Test::Unit::TestCase
   end
 
   def test_scrambled_strings
-    puts @fixtures['ALBERO_FIORE'].to_s
     # Order of input doesn't matter
     assert_equal Parser.parse(Bocadillo.encode(@fixtures['ALBERO_FIORE'], '(', '|', ')'), '(', '|', ')'),
               Parser.parse(Bocadillo.encode(@fixtures['ALBERO_FIORE'].reverse, '(', '|', ')'), '(', '|', ')')

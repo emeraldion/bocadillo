@@ -70,26 +70,26 @@ class BocadilloTest < Test::Unit::TestCase
 
   def test_decode_common_radix
     # Strings with a common radix
-    assert_equal @fixtures['ALB_A_ER_GO_O_TO'],
+    assert_equal @fixtures['ALB_A_ER_GO_O_TO'].sort,
       Bocadillo.decode('alb(a|er(go|o|to))', '(', '|', ')')
-    assert_equal @fixtures['PESCA_TORE_H_ERIA_IERA'],
+    assert_equal @fixtures['PESCA_TORE_H_ERIA_IERA'].sort,
       Bocadillo.decode('pesc(a(|tore)|h(eria|iera))', '(', '|', ')')
-    assert_equal @fixtures['MARE_INA_IO_IA'],
+    assert_equal @fixtures['MARE_INA_IO_IA'].sort,
       Bocadillo.decode('mar(e|i(a|na(|io)|o))', '(', '|', ')')
   end
 
   def test_decode_mixed_strings
     # Mixed strings
-    assert_equal @fixtures['ALB_A_ER_GO_O_TO'].clone.concat(@fixtures['PESCA_TORE_H_ERIA_IERA']),
+    assert_equal @fixtures['ALB_A_ER_GO_O_TO'].clone.concat(@fixtures['PESCA_TORE_H_ERIA_IERA']).sort,
       Bocadillo.decode('alb(a|er(go|o|to))|pesc(a(|tore)|h(eria|iera))', '(', '|', ')')
   end
 
   def test_decode_scrambled_order
-    # Order of input doesn't matter
-    assert_equal Bocadillo.decode(@fixtures['ALBERO_FIORE'], '(', '|', ')'),
-      Bocadillo.decode(@fixtures['ALBERO_FIORE'].reverse, '(', '|', ')')
-    assert_equal Bocadillo.decode(@fixtures['ALB_A_ER_GO_O_TO'], '(', '|', ')'),
-      Bocadillo.decode(@fixtures['ALB_A_ER_GO_O_TO'].reverse, '(', '|', ')')
+    # Order of input does matter
+    assert_not_equal Bocadillo.decode('albero|fiore', '(', '|', ')'),
+      Bocadillo.decode('fiore|albero', '(', '|', ')')
+    assert_not_equal Bocadillo.decode('alb(er(o|to|go)|a)', '(', '|', ')'),
+      Bocadillo.decode('alb(a|er(go|o|to))', '(', '|', ')')
   end
 
   def test_decode_isin
@@ -97,7 +97,7 @@ class BocadilloTest < Test::Unit::TestCase
     @fixtures = YAML.load_file(@fixture_file)
 
     # A real life example
-    assert_equal @fixtures['ISIN']['string'],
-      Bocadillo.decode(@fixtures['ISIN']['array'], '(', '|', ')')
+    assert_equal @fixtures['ISIN']['array'],
+      Bocadillo.decode(@fixtures['ISIN']['string'], '(', '|', ')')
   end
 end
