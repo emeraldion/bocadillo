@@ -26,13 +26,14 @@ class CoverTest < Test::Unit::TestCase
   end
 
   def test_cover_pair
-    puts @fixtures['A_B']['array'].to_s
     assert_equal @fixtures['A_B']['tree'],
       Cover.cover(@fixtures['A_B']['array'])
   end
 
   def test_cover_substring
-    puts @fixtures['ARIA_ANNA']['array'].to_s
+    assert_equal @fixtures['A_AB']['tree'],
+      Cover.cover(@fixtures['A_AB']['array'])
+
     assert_equal @fixtures['ARIA_ANNA']['tree'],
       Cover.cover(@fixtures['ARIA_ANNA']['array'])
   end

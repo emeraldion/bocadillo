@@ -20,10 +20,25 @@ A_B:
       l: b
       c:
         -
+
+A_AB:
+  array:
+    - a
+    - ab
+  tree:
+    -
+      l: a
+      c:
+        -
+        -
+          l: b
+          c:
+            -
+
 ARIA_ANNA:
   array:
+    - arianna
     - aria
-    - ariaanna
   tree:
     -
       l: a

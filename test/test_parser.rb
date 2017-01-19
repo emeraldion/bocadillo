@@ -11,28 +11,28 @@ class ParserTest < Test::Unit::TestCase
   end
 
   def test_incompatible_words
-    assert_equal Parser.parse('cane|gatto', '(', '|', ')'),
-      ['cane', 'gatto']
-    assert_equal Parser.parse('cane|gatto|unicorno', '(', '|', ')'),
-      ['cane', 'gatto', 'unicorno']
+    assert_equal ['cane', 'gatto'],
+      Parser.parse('cane|gatto', '(', '|', ')')
+    assert_equal ['cane', 'gatto', 'unicorno'],
+      Parser.parse('cane|gatto|unicorno', '(', '|', ')')
   end
 
   def test_common_prefixes
-    assert_equal Parser.parse('al(ba|ga)', '(', '|', ')'),
-      ['alba', 'alga']
-    assert_equal Parser.parse('alb(a|er(go|o|to))', '(', '|', ')'),
-      ['alba', 'albergo', 'albero', 'alberto']
-    assert_equal Parser.parse('alb(a|er(g(atore|o)|o|to))', '(', '|', ')'),
-      ['alba', 'albergatore', 'albergo', 'albero', 'alberto']
+    assert_equal ['alba', 'alga'],
+      Parser.parse('al(ba|ga)', '(', '|', ')')
+    assert_equal ['alba', 'albergo', 'albero', 'alberto'],
+      Parser.parse('alb(a|er(go|o|to))', '(', '|', ')')
+    assert_equal ['alba', 'albergatore', 'albergo', 'albero', 'alberto'],
+      Parser.parse('alb(a|er(g(atore|o)|o|to))', '(', '|', ')')
   end
 
   def test_panflute_strings_ascending
-    assert_equal Parser.parse('certa(|mente)', '(', '|', ')'),
-      ['certa', 'certamente']
+    assert_equal ['certa', 'certamente'],
+      Parser.parse('certa(|mente)', '(', '|', ')')
   end
 
   def test_isin
-    assert_equal Parser.parse(@fixtures['ISIN']['string'], '(', '|', ')'),
-      @fixtures['ISIN']['array']
+    assert_equal  @fixtures['ISIN']['array'],
+      Parser.parse(@fixtures['ISIN']['string'], '(', '|', ')')
   end
 end

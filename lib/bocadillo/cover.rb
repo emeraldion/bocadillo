@@ -6,7 +6,7 @@ class Bocadillo::Cover
       # Error: past assigned slice
       return false
     end
-    if not arr[x0]
+    if x0 > arr.length - 1
       # Error: past array length
       return false;
     end
@@ -29,13 +29,13 @@ class Bocadillo::Cover
 
     # Spread in width until we find either the end, or a different char
     x = x0
-    m = false
     loop do
-      if x < l and arr[x0][y] === arr[x][y]
+      m = false
+      if x < l && arr[x0][y] === arr[x][y]
         m = true 
         x += 1
       end
-      break if m
+      break unless m
     end
 
     # If we haven't covered the full length of the assigned slice, launch
