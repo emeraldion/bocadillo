@@ -1,14 +1,13 @@
 class Bocadillo
-  def self.encode(arr, preamble = '(', divider = '|', terminator = ')')
-    arr.sort!
+  def self.encode(words, preamble = '(', divider = '|', terminator = ')')
     Serializer.serialize({
       'l' => '',
-      'c' => Cover.cover(arr)
+      'c' => Cover.cover(words.sort)
     }, preamble, divider, terminator)
   end
 
-  def self.decode(str, preamble = '(', divider = '|', terminator = ')')
-    Parser.parse(str, preamble, divider, terminator)
+  def self.decode(encoded_string, preamble = '(', divider = '|', terminator = ')')
+    Parser.parse(encoded_string, preamble, divider, terminator)
   end
 end
 
