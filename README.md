@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/emeraldion/bocadillo.svg?branch=master)](https://travis-ci.org/emeraldion/bocadillo)
+[![Gem Version](https://badge.fury.io/rb/bocadillo.svg)](https://badge.fury.io/rb/bocadillo)
 
 # bocadillo
 
